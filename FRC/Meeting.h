@@ -8,9 +8,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-static NSString *const kSectionIDPast = @"  Past";
-static NSString *const kSectionIDToday = @"  Today";
-static NSString *const kSectionIDUpcoming = @"  Upcoming";
+static NSString *const kSectionIDPast = @"Past";
+static NSString *const kSectionIDToday = @"Today";
+static NSString *const kSectionIDUpcoming = @"Upcoming";
 
 
 @interface Meeting : NSManagedObject

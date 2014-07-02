@@ -44,10 +44,10 @@
     NSNumber *tempSort = [self primitiveSortKey];
     [self didAccessValueForKey:@"sortKey"];
     
-    
-    NSDate *dateToCompare = [self getDateWithLocalTimeZone:[self startDate]];
+    [self willAccessValueForKey:@"startDate"];
+    NSDate *dateToCompare = [self getDateWithLocalTimeZone:[self primitiveStartDate]];
     dateToCompare = [self dateWithoutTime:dateToCompare];
-
+    [self didAccessValueForKey:@"startDate"];
     
     NSDate *now = [self getDateWithLocalTimeZone:[NSDate date]];
     now = [self dateWithoutTime:now];
@@ -78,6 +78,7 @@
     if ((sortNumber != [tempSort integerValue]) || (!tempSort))
     {
         tmp = sectionString;
+        NSLog(@"sectionString %@", sectionString);
         tempSort = [NSNumber numberWithInt:sortNumber];
         [self setPrimitiveSectionIdentifier:tmp];
         [self setPrimitiveSortKey:tempSort];
